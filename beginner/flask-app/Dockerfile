@@ -9,7 +9,7 @@ RUN pip install --upgrade pip
 
 # install Python modules needed by the Python app
 COPY requirements.txt /usr/src/app/
-RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
+RUN pip install --no-cache-dir --trusted-host pypi.python.org -r /usr/src/app/requirements.txt
 
 # copy files required for the app to run
 COPY app.py /usr/src/app/
